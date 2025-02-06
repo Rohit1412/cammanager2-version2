@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Stream Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/@videojs/themes@1.0.0/fantasy/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Camera Stream Manager</h1>
+        
+        <!-- Add Camera Section -->
+        <div class="camera-control-form">
+            <input type="text" id="new-camera-id" placeholder="Enter camera ID (e.g. 0)">
+            <button class="btn btn-primary" id="add-camera-btn">Add Camera</button>
+        </div>
+
+        <!-- Status Bar -->
+        <div id="system-status" class="status-bar">
+            <div class="status-item">
+                <span class="status-label">Active Cameras:</span>
+                <span id="active-cam-count">0</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">System Health:</span>
+                <span class="status-dot healthy"></span>
+            </div>
+        </div>
+
+        <!-- Camera Grid -->
+        <div id="camera-grid" class="grid-container"></div>
+
+        <!-- Recordings Section -->
+        <div class="recordings-section">
+            <h2>Recordings</h2>
+            <div id="recordings-list" class="recordings-grid"></div>
+        </div>
+
+        <!-- Notification Container -->
+        <div id="notifications" class="notification-container"></div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="modal-video" class="video-js" controls></video>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/video.js@7.20.1/dist/video.min.js"></script>
+    <script src="/static/admin.js"></script>
+</body>
+</html> 
